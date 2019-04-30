@@ -3,11 +3,9 @@ def bubble_sort(arr)
     swapped = false
     i = 0
     while i < (arr.size) -1
-      num1 = arr[i]
-      num2 = arr[i+1]
+      num1, num2 = arr[i], arr[i+1]
       if num1 > num2
-        arr[i] = num2
-        arr[i+1] = num1
+        arr[i], arr[i+1] = num2, num1
         swapped = true
       end
       i += 1
@@ -24,12 +22,10 @@ def bubble_sort_by(arr)
     swapped = false
     i = 0
     while i < (arr.size) -1
-      item1 = arr[i]
-      item2 = arr[i+1]
+      item1, item2 = arr[i], arr[i+1]
       res = yield(item1, item2)
       if res > 0
-        arr[i] = item2
-        arr[i+1] = item1
+        arr[i], arr[i+1] = item2, item1
         swapped = true
       end
       i += 1
